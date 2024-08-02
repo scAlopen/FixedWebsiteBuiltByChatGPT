@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px; /* Add padding to keep content away from the edges */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #333;
+    margin: 0; /* Remove default margin */
+}
+
+main {
+    margin-top: 0px; /* Add space between title and rectangle */
+}
+
+.rounded-rectangle {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #333; /* Add border to show lines */
+}
+
+.rounded-rectangle img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.rounded-rectangle:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT built it</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #69411b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #a06e40;
+        }
+
+        .verse, .random-chapter {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bible Verse of the Day</h1>
+        <button class="button" onclick="generateVerse()">Generate Verse</button>
+        <button class="button" onclick="goBack()">Back</button>
+        <div class="verse" id="verse"></div>
+        <div class="random-chapter" id="random-chapter"></div>
+    </div>
+
+    <script>
+        const verses = [
+            // Add your list of Bible verses here
+            "John 3:16 - For God so loved the world...",
+            "Psalm 23:1 - The Lord is my shepherd...",
+            "Philippians 4:13 - I can do all things through Christ who strengthens me...",
+            "Romans 8:28 - And we know that in all things God works for the good of those who love him...",
+            "Proverbs 3:5 - Trust in the Lord with all your heart and lean not on your own understanding...",
+            // Add more verses as needed
+        ];
+
+        const chapters = [
+            // Add your list of Bible chapters here
+            "Genesis 1 - In the beginning God created the heavens and the earth...",
+            "Exodus 3 - Now Moses was tending the flock of Jethro his father-in-law...",
+            "Psalm 1 - Blessed is the one who does not walk in step with the wicked...",
+            "Proverbs 1 - The proverbs of Solomon son of David, king of Israel...",
+            "Matthew 1 - This is the genealogy of Jesus the Messiah the son of David...",
+            // Add more chapters as needed
+        ];
+
+        function getRandomItem(array) {
+            const randomIndex = Math.floor(Math.random() * array.length);
+            return array[randomIndex];
+        }
+
+        function generateVerse() {
+            const verse = getRandomItem(verses);
+            const randomChapter = getRandomItem(chapters);
+
+            document.getElementById('verse').innerText = `Verse of the Day: ${verse}`;
+            document.getElementById('random-chapter').innerText = `Random Chapter: ${randomChapter}`;
+        }
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+    
+    </script>
+</body>
+</html>
